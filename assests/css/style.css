@@ -185,3 +185,47 @@ html{
   line-height: 24px;
   margin-top:-3px;
 }
+
+.place{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:32px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.card-place{
+  width:33.33%;
+  padding:0 8px;
+  
+}
+.card-place img{
+  width:100%;
+}
+.card-place > img:hover{
+  opacity: 0.4;
+}
+.card-content{
+  background-color: #fff;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.card-place >h3, .date, .card-child-content, .btn-place{
+  margin-top:15px;
+}
+.date{
+  color: #757575;
+}
+.card-child-content{
+  line-height:1.5;
+}
+.btn-place{
+  text-decoration: none;
+  background-color: #000;
+  padding:11px 16px;
+  display: inline-block;
+}
+.btn-place:hover{
+  color:#000 !important;
+  background-color: #ccc;
+}
