@@ -74,7 +74,7 @@
                             <h3>New York</h3>
                             <p class="date">Fri 27 Nov 2016</p>
                             <p class="card-child-content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                            <a class="btn-place white-text" href="">Buy Tickets</a>
+                            <button class="btn-place white-text js-buy-ticket">Buy Tickets</button>
                         </div>
                     </div>
                     <div class="card-place">
@@ -83,7 +83,7 @@
                             <h3>Paris</h3>
                             <p class="date">Sat 28 Nov 2016</p>
                             <p class="card-child-content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                            <a class="btn-place white-text" href="">Buy Tickets</a>
+                            <button class="btn-place white-text js-buy-ticket">Buy Tickets</button>
                         </div>
                     </div>
                     <div class="card-place">
@@ -92,7 +92,42 @@
                             <h3>San Francisco</h3>
                             <p class="date">Sun 29 Nov 2016</p>
                             <p class="card-child-content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                            <a class="btn-place white-text" href="">Buy Tickets</a>
+                            <button class="btn-place white-text js-buy-ticket">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal">
+                <div class="modal-container modalContainer">
+                    <div class="modal-close-x js-modal-close"><i class="ti-close"></i></div>
+                    
+                    <div class="modal-header">
+                        <i class="ti-bag"></i> Tickets
+                    </div>
+
+                    <div class="modal-body">
+                        <label for="modal-quantity" class="modal-label">
+                            <i class="ti-shoppping-cart"></i>
+                        Tickets, $15 per person
+                        <input id="modal-quantity" type="text" class="modal-money" placeholder="How many?">
+                        </label>
+                        
+
+                        <label for="modal-email" class="modal-label">
+                            <i class="ti-user"></i>
+                        Send to
+                        <input id="modal-email" type="text" class="modal-email" placeholder="Enter email...">
+                        </label>
+                        
+                        <button id="buy-ticket">
+                            Pay
+                            <i class="ti-check"></i>
+                        </button>
+                        <div class="modal-footer">
+                            <div class="modal-close-btn js-modal-close">
+                                Close <i class="ti-close"></i>
+                            </div>
+                            <p class="modal-help">Need <a href="">help?</a></p>
                         </div>
                     </div>
                 </div>
@@ -128,6 +163,35 @@
 
 
     </div>
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        const modal = document.querySelector('.modal')
+        const modalContainer = document.querySelector('.modal-container')
+        const modalBtnsClose = document.querySelectorAll('.js-modal-close')
+        
+        
+        for (const buyBtn of buyBtns){
+            buyBtn.addEventListener('click',showBuyTickets);
+        }
+        function showBuyTickets() {
+            modal.classList.remove('modal-close')
+            modal.classList.add('modal-open')
+        }
+
+        for (const modalBtnClose of modalBtnsClose){
+            modalBtnClose.addEventListener('click',closeBuyTicketsModal);
+        }
+        function closeBuyTicketsModal(){
+            modal.classList.remove('modal-open')
+            modal.classList.add('modal-close')
+        }
+        
+        modal.addEventListener('click',closeBuyTicketsModal);
+        modalContainer.addEventListener('click',function(event){
+            event.stopPropagation()
+        })
+    </script>
+
 </body>
 
 
