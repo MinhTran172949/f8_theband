@@ -1,3 +1,44 @@
+/* Common */
+.text-center{
+  text-align: center!important;
+}
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.row::after{
+  content: "";
+  display: block;
+  clear: both;  
+}
+.col{
+  float:left;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.mt-8{
+  margin-top: 8px !important;
+}
+.mt-16{
+  margin-top: 16px !important;
+}
+.col-third{
+  width: 33.33%;
+}
+.col-half{
+  width: 50%;
+}
+.col-full{
+  width: 100%;
+}
+
+.clear{
+  clear:both;
+}
+
+
+
+/* Main */
 /*Reset CSS */
 *{
   padding: 0;
@@ -7,10 +48,7 @@
 
 html{
   font-family: Arial, Helvetica, sans-serif;
-  
-}
-#main{
-
+  scroll-behavior: smooth;
 }
 #header{
   height: 46px;
@@ -83,6 +121,7 @@ html{
   position:relative;
   background: url('/assests/img/chicago.jpg') top center / cover no-repeat;
   padding-bottom: 50%;
+  z-index: -1;
 }
 
 
@@ -134,20 +173,18 @@ html{
 
 
 .name{
-  display:flex;
-  flex-flow: row;
-  justify-content: space-around;
   padding-top:47px;
 }
 
 .name .name-member{
   font-size:15px;
-  text-align: center;
   margin-bottom:15px;
+  margin-top:15px;
 }
 .name img{
   width:154px;
   border-radius: 4px;
+  margin-bottom: 16px;
 }
 
 
@@ -186,21 +223,18 @@ html{
 }
 
 .place{
-  display: flex;
-  flex-wrap: wrap;
   margin-top:32px;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-bottom: 48px;
 }
 .card-place{
+  float:left;
   width:33.33%;
   padding:0 8px;
-  
 }
-.card-place img{
+.place img{
   width:100%;
 }
-.card-place > img:hover{
+.place > img:hover{
   opacity: 0.4;
 }
 .card-content{
@@ -347,4 +381,55 @@ html{
     opacity: 1;
     transform: translateY(0px); 
   }
+}
+.contact-info{
+  font-size: 18px;
+  line-height: 1.4;
+}
+.contact-info i{
+  width: 30px;
+  display: inline-block;
+}
+.contact-form{
+  font-size: 15px;
+}
+.form-control{
+  padding: 11px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+.contact-form .form-submit-btn{
+  display: block;
+  background-color: #000;
+  color:#fff;
+  border: 1px solid #000;
+  padding: 11px 16px;
+  float: right;
+}
+.contact-form .form-submit-btn:hover{
+  background-color: #ccc;
+  color: #000;
+  border:none;
+}
+.map-image{
+  width:100%;
+  height:auto;
+  filter: grayscale(50%);
+}
+.footer-section{
+  background-color: #f1f1f1f1;
+}
+.footer-section i{
+  font-size:24px;
+  color:#666;
+}
+.footer-section i:hover{
+  opacity: 0.6;
+}
+.footer-text{
+  margin-top: 21px;
+  margin-bottom: 15px;
+}
+.footer-text, .footer-text a{
+  color:#666;
 }
