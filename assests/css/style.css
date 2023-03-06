@@ -72,7 +72,7 @@ html{
   text-transform: uppercase;
   text-decoration: none;
   line-height: 46px;
-  padding: 0px 24px;
+  padding: 1px 24px;
   display: block;
 }
 #nav li:hover .subnav{
@@ -103,16 +103,28 @@ html{
   font-size: 12px;
 }
 
-#header .search-btn{
+#header .search-btn,
+#header .mobile-menu-btn
+{
   float:right;
   padding: 0 21px;
 }
-#header .search-btn:hover{
+#header .search-btn:hover
+{
   background-color: #f44336;
   cursor: pointer;
 }
-#header .search-icon{
+#header .mobile-menu-btn:hover{
+  background-color: #ccc;
+}
+#header .mobile-menu-btn:hover .mobile-menu-icon{
+  color:#000;
+}
+#header .search-icon,
+#header .mobile-menu-icon
+{
   color: #fff;
+  font-size:20px;
   line-height: 46px;
 }
 
@@ -223,7 +235,7 @@ html{
 }
 
 .place{
-  margin-top:32px;
+  margin-top:16px;
   margin-bottom: 48px;
 }
 .card-place{
@@ -432,4 +444,65 @@ html{
 }
 .footer-text, .footer-text a{
   color:#666;
+}
+.mobile-menu-btn{
+  display:none;
+}
+@media (min-width: 740px) and (max-width:1024px){
+  .content-section{
+    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 740px){
+  .content-section{
+    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+  #header{
+    overflow: hidden;
+  }
+  #nav li{
+    display: block;
+  }
+  #nav li:first-child{
+    display: inline-block;
+  }
+  #nav{
+    display: block;
+  }
+  #nav .subnav{
+    position: initial;
+    background-color: #333;
+  }
+  #nav .subnav a{
+    color:#fff;
+    padding: 5px 41px;
+  }
+  #header .search-btn{
+    display: none;
+  }
+
+  .mobile-menu-btn{
+    position:absolute;
+    top:0;
+    right:0;
+    display: block;
+  }
+  #band .member-item{
+    margin-top: 30px;
+    width:100%;
+  }
+  .name img{
+    width:60%;
+  }
+  .s-col-full{
+    width:100%;
+  }
+  .mt-8{
+    margin-top: 8px;
+  }
 }
